@@ -1,0 +1,3 @@
+The LLM Pipeline I have built in this hackathon can analyze submitted procurement data by the supplier or purchase agreements from the client to assess any incorrect or inaccurate data by comparing it with JIP33 procurement specifications. Joint Industry Programme 33 (JIP33) procurement specifications are standardized documents that help the oil and gas industry improve the procurement, delivery, and specification of equipment.
+
+After finding the incorrections and inaccurate data, it creates an email draft for the supplier or client to update the specific data with a deadline, creating a forcing function and also helping in tracking supplier communications.
