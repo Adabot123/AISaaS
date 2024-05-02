@@ -53,18 +53,6 @@ model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
                               generation_config=generation_config,
                               safety_settings=safety_settings)
 
-uploaded_files = []
-def upload_if_needed(pathname: str) -> list[str]:
-  path = Path(pathname)
-  hash_id = hashlib.sha256(path.read_bytes()).hexdigest()
-  try:
-    existing_file = genai.get_file(name=hash_id)
-    return [existing_file.uri]
-  except:
-    pass
-  uploaded_files.append(genai.upload_file(path=path, display_name=hash_id))
-  return [uploaded_files[-1].uri]
-
 def extract_pdf_pages(pathname: str) -> list[str]:
   parts = [f"--- START OF PDF ${pathname} ---"]
   # Add logic to read the PDF and return a list of pages here.
